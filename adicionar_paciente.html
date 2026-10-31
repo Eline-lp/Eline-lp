@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Paciente</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Barra superior */
+    .status-bar {
+      background-color: #3B1256;
+      color: white;
+      font-size: 0.8rem;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* Barra inferior */
+    .icon-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f8f9fa;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      border-top: 2px solid #ddd;
+    }
+
+    .icon-bar a {
+      color: #3B1256;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .icon-bar a:hover {
+      color: #5a2870;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    /* Formulário de Cadastro */
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: auto;
+      width: 80%;
+      max-width: 600px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-top: 70px; /* Para compensar a barra superior */
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .register-button {
+      background-color: rgba(118, 76, 146, 0.1);
+      color: white;
+      border-radius: 12px;
+      padding: 12px;
+      font-weight: bold;
+      border: none;
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .register-button:hover {
+      background-color: #6b3d7e;
+    }
+
+    .back-button {
+      text-decoration: none;
+      color: #3B1256;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      color: #5a2870;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior -->
+  <div class="status-bar">
+    <span id="current-time">09:41</span>
+    <div>
+      <i class="bi bi-reception-4"></i>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+    </div>
+  </div>
+
+  <!-- Formulário de Cadastro -->
+  <div class="form-container">
+    <img src="https://via.placeholder.com/120" alt="Foto do Paciente" class="profile-pic">
+    <div class="form-title">Novo Paciente</div>
+
+    <form action="registrar_paciente.html" method="POST">
+      <input type="text" id="nome" class="input-field" placeholder="Nome Completo" required>
+      <input type="number" id="idade" class="input-field" placeholder="Idade" required>
+      <input type="text" id="telefone" class="input-field" placeholder="Telefone" required>
+      <button type="submit" class="register-button">Registrar</button>
+    </form>
+
+    <a href="index.html" class="back-button">Voltar</a>
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="icon-bar">
+    <a href="index.html"><i class="bi bi-house"></i></a>
+    <a href="historico.html"><i class="bi bi-clock-history"></i></a>
+    <a href="grafico.html"><i class="bi bi-bar-chart"></i></a>
+    <a href="adicionar_paciente.html"><i class="bi bi-person-plus"></i></a>
+    <a href="pesquisa.html"><i class="bi bi-search"></i></a>
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+    }
+    setInterval(updateTime, 1000); // Atualiza a cada segundo
+    updateTime();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

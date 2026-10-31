@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Pacientes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    /* Barra superior de status */
+    .status-bar {
+      background-color: #3B1256;
+      color: white;
+      font-size: 0.8rem;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .status-bar span {
+      margin: 0 10px;
+    }
+
+    /* Cartões de pacientes */
+    .patient-card {
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Barra inferior de navegação */
+    .icon-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f8f9fa;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-around; /* Espaça uniformemente os ícones */
+      align-items: center; /* Centraliza verticalmente os ícones */
+      padding: 10px 0;
+    }
+    .icon-bar a {
+      color: #3B1256;
+      font-size: 1.5rem;
+      text-decoration: none; /* Remove sublinhado */
+    }
+    .icon-bar a:hover {
+      color: #5a2870;
+    }
+
+    /* Logo */
+    .logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    /* Nome e função do aplicativo */
+    .app-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #73A7B9;
+    }
+    .role {
+      font-size: 1rem;
+      color: #00000080; /* 50% de opacidade */
+    }
+    .patient-count {
+      font-size: 0.9rem;
+      color: #000000;
+      font-weight: normal;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra superior de status -->
+  <div class="status-bar">
+    <span id="current-time">09:41</span>
+    <div>
+      <i class="bi bi-reception-4"></i>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <!-- Logo -->
+      <div class="d-flex align-items-center">
+        <img src="./logo.png" alt="Logo do App" class="logo me-2">
+        <div>
+          <div class="d-flex align-items-center">
+            <span class="app-name me-2">Marcelo Pereira</span>
+            <span class="role">Cuidador</span>
+          </div>
+          <div class="d-block">
+            <span class="patient-count">5 Pacientes</span>
+          </div>
+        </div>
+      </div>
+      <!-- Configurações -->
+      <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-three-dots-vertical"></i></button>
+    </div>
+
+    <!-- Lista de Pacientes -->
+    <div class="list-group">
+      <!-- Paciente 1 -->
+      <div class="list-group-item patient-card mb-3">
+        <div class="d-flex align-items-center">
+          <img src="fatima.jpg" alt="Foto de Fátima Silva" class="profile-pic me-3">
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Fátima Silva</h6>
+            <p class="mb-1 text-muted small">65 Anos</p>
+            <small class="text-muted">Domingo, 12 Junho - 10:00 AM - 11:00 AM</small>
+          </div>
+          <a href="adicionar_paciente.html" class="btn btn-outline-primary btn-sm">Detalhes</a>
+        </div>
+      </div>
+      <!-- Paciente 2 -->
+      <div class="list-group-item patient-card mb-3">
+        <div class="d-flex align-items-center">
+          <img src="paciente.jpg" alt="Foto de Zé Li Lun" class="profile-pic me-3">
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Zé Li Lun</h6>
+            <p class="mb-1 text-muted small">50 Anos</p>
+            <small class="text-muted">Domingo, 12 Junho - 09:00 AM - 10:00 AM</small>
+          </div>
+          <a href="adicionar_paciente.html" class="btn btn-outline-primary btn-sm">Detalhes</a>
+        </div>
+      </div>
+      <!-- Paciente 3 -->
+      <div class="list-group-item patient-card mb-3">
+        <div class="d-flex align-items-center">
+          <img src="Tadeu.jpg" alt="Foto de Tadeu Santos" class="profile-pic me-3">
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Tadeu Santos</h6>
+            <p class="mb-1 text-muted small">55 Anos</p>
+            <small class="text-muted">Domingo, 12 Junho - 08:00 AM - 09:00 AM</small>
+          </div>
+          <a href="adicionar_paciente.html" class="btn btn-outline-primary btn-sm">Detalhes</a>
+        </div>
+      </div>
+      <!-- Paciente 4 -->
+      <div class="list-group-item patient-card mb-3">
+        <div class="d-flex align-items-center">
+          <img src="sebastiao.avif" alt="Foto de Sebatião Barbosa" class="profile-pic me-3">
+          <div class="flex-grow-1">
+            <h6 class="mb-1">Sebastião Barbosa</h6>
+            <p class="mb-1 text-muted small">58 Anos</p>
+            <small class="text-muted">Domingo, 12 Junho - 07:00 AM - 08:00 AM</small>
+          </div>
+          <a href="adicionar_paciente.html" class="btn btn-outline-primary btn-sm">Detalhes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Navegação -->
+  <div class="icon-bar">
+    <a href="index.html"><i class="bi bi-house-door"></i></a> <!-- Página Inicial -->
+    <a href="adicionar_paciente.html"><i class="bi bi-person-plus"></i></a> <!-- Adicionar Paciente -->
+    <a href="#"><i class="bi bi-clock-history"></i></a> <!-- Histórico -->
+    <a href="#"><i class="bi bi-bar-chart"></i></a> <!-- Estatísticas -->
+    <a href="#"><i class="bi bi-search"></i></a> <!-- Buscar -->
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+    }
+    setInterval(updateTime, 1000); // Atualiza a cada segundo
+    updateTime();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
